@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Listings, Homes for Sale and Rent | OnMap</title>
+    <!-- Bootstrap CSS File Link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Font CSS File Link -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="assets/css/custom-style.css">
+    <!-- Media CSS File Link -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Filter CSS File Link -->
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
+    <!-- Slick Slider Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <section id="hero-section">
+        <header>
+            <div class="header-top d-none d-sm-block">
+                <div class="container">
+                    <div class="row py-1">
+                        <div class="col-8">
+                            <ul id="HTN_left_ul">
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Professionals</a></li>
+                                <li><a href="#">Articles</a></li>
+                                <li><a href="#">Virtual tour <span class="badge bg-secondary">New</span></a></li>
+                                <li><a href="#">Publish for realtors</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul id="HTN_left_ul2">
+                                <li><a href="javascript:void(0);">
+                                    <div class="dropdown">
+                                        <button onclick="flagDropdown()" class="dropbtn"><i class="flag flag-australia"></i> &blacktriangledown;</button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                          <a href="#"><i class="flag flag-botswana"></i></a>
+                                          <a href="#"><i class="flag flag-china"></i></a>
+                                        </div>
+                                    </div>
+                                </a></li>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">New account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row py-3">
+                        <div class="col-md-8 col-sm-6">
+                            <span class="logo me-5 d-block d-sm-none">OnMap</span>
+                            <ul id="HBN_left_ul" class="d-none d-sm-block">
+                                <span class="logo me-5">OnMap</span>
+                                <li><a href="#">For sale</a></li>
+                                <li><a href="#">For rent</a></li>
+                                <li><a href="#">Commercial</a></li>
+                                <li><a href="#">New homes</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-6 d-flex flex-row-reverse align-items-center">
+                            <button class="publish_btn"><i class="fa-solid fa-circle-plus"></i> Publish property</button>
+                            <a href="#" class="heart_link d-none d-sm-block"><i class="fa fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cover -->
+        <div class="container-fluid hero_cover">
+            <span class="tagline">Map your way home OnMap</span>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Buy</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Rent</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">New homes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Commercial</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="search_box">
+                        <button><i class="fa fa-search"></i></button>
+                        <input type="text" placeholder="Address, neighborhood, city">
+                    </div>
+
+                    <!-- Filter -->
+                    <span id="dots"></span>
+                    <div id="more">
+                        <div class="container mt-3 p-2 rounded bg-white">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label>Property types</label>
+                                    <select id="multi_option" multiple name="native-select" placeholder="All" data-silent-initial-value-set="false">
+                                    <option value="1">Apartment</option>
+                                    <option value="2">Cottage/house</option>
+                                    <option value="3">Duplex</option>
+                                    <option value="4">Garden apt.</option>
+                                    <option value="5">Loft</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <label>Number of rooms</label>
+                                    <select id="multi_option" multiple name="native-select" placeholder="All" data-silent-initial-value-set="false">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">+6</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <label for="min_price">Minimum price</label>
+                                    <input type="text" id="min_price" class="filter_input" placeholder="Min price" autocomplete="off">
+                                </div>
+                                <div class="col-3">
+                                    <label for="max_price">Maximum price</label>
+                                    <input type="text" id="max_price" class="filter_input" placeholder="Max price" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="ShowFilter()" id="filter_Btn">Additional options &blacktriangledown;</button>
+                    <!-- Filter -->
+
+                </div>
+            </div>
+
+
+            <div class="down_wrap">
+                <div class="vzZcZspdWODT0HYMkIffy"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODkiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA4OSA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOC44NjIyIDJIMy4wMDEwNUMyLjQ0ODU3IDIgMi4wMDA3IDIuNDQ3NzIgMi4wMDA3IDNWMzdDMi4wMDA3IDM3LjU1MjMgMi40NDg1NyAzOCAzLjAwMTA1IDM4SDE4Ljg2MjNDMTkuNDE0NyAzOCAxOS44NjI2IDM3LjU1MjMgMTkuODYyNiAzN1YzQzE5Ljg2MjYgMi40NDc3MiAxOS40MTQ3IDIgMTguODYyMiAyWk0zLjAwMTA1IDBDMS4zNDM2MSAwIDAgMS4zNDMxNSAwIDNWMzdDMCAzOC42NTY5IDEuMzQzNjIgNDAgMy4wMDEwNSA0MEgxOC44NjIzQzIwLjUxOTcgNDAgMjEuODYzMyAzOC42NTY5IDIxLjg2MzMgMzdWM0MyMS44NjMzIDEuMzQzMTUgMjAuNTE5NyAwIDE4Ljg2MjIgMEgzLjAwMTA1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOS44NjI2IDYuMDY4OTRIMi4wMDA3QzEuNDQ4MjIgNi4wNjg5NCAxLjAwMDM1IDYuNTE2NjYgMS4wMDAzNSA3LjA2ODk0VjMwLjI5NDdDMS4wMDAzNSAzMC44NDcgMS40NDgyMiAzMS4yOTQ3IDIuMDAwNyAzMS4yOTQ3SDE5Ljg2MjZDMjAuNDE1MSAzMS4yOTQ3IDIwLjg2MjkgMzAuODQ3IDIwLjg2MjkgMzAuMjk0N1Y3LjA2ODk0QzIwLjg2MjkgNi41MTY2NiAyMC40MTUxIDYuMDY4OTQgMTkuODYyNiA2LjA2ODk0Wk0yLjAwMDcgNS4wNjg5NEMwLjg5NTc0MyA1LjA2ODk0IDAgNS45NjQzNyAwIDcuMDY4OTRWMzAuMjk0N0MwIDMxLjM5OTIgMC44OTU3NDUgMzIuMjk0NyAyLjAwMDcgMzIuMjk0N0gxOS44NjI2QzIwLjk2NzYgMzIuMjk0NyAyMS44NjMzIDMxLjM5OTIgMjEuODYzMyAzMC4yOTQ3VjcuMDY4OTRDMjEuODYzMyA1Ljk2NDM3IDIwLjk2NzYgNS4wNjg5NCAxOS44NjI2IDUuMDY4OTRIMi4wMDA3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyLjU5ODkgMzUuMTczNEMxMi41OTg5IDM2LjA5MzkgMTEuODUyNCAzNi44NDAxIDEwLjkzMTcgMzYuODQwMUMxMC4wMTA5IDM2Ljg0MDEgOS4yNjQ0IDM2LjA5MzkgOS4yNjQ0IDM1LjE3MzRDOS4yNjQ0IDM0LjI1MyAxMC4wMTA5IDMzLjUwNjggMTAuOTMxNyAzMy41MDY4QzExLjg1MjQgMzMuNTA2OCAxMi41OTg5IDM0LjI1MyAxMi41OTg5IDM1LjE3MzRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM0Ljg5ODYgM0wzNC44OTg2IDM3QzM0Ljg5ODYgMzcuNTUyMyAzNS4zNDY1IDM4IDM1Ljg5OSAzOEw4NS45OTkgMzhDODYuNTUxNCAzOCA4Ni45OTkzIDM3LjU1MjMgODYuOTk5MyAzN0w4Ni45OTkzIDNDODYuOTk5MyAyLjQ0NzcxIDg2LjU1MTQgMiA4NS45OTkgMkwzNS44OTkgMkMzNS4zNDY1IDIgMzQuODk4NiAyLjQ0NzcyIDM0Ljg5ODYgM1pNMzIuODk3OSAzN0MzMi44OTc5IDM4LjY1NjkgMzQuMjQxNiA0MCAzNS44OTkgNDBMODUuOTk5IDQwQzg3LjY1NjQgNDAgODkgMzguNjU2OSA4OSAzN0w4OSAzQzg5IDEuMzQzMTUgODcuNjU2NCAxLjQyMTEzZS0wNiA4NS45OTkgMS40OTM1OGUtMDZMMzUuODk5IDMuNjgzNTJlLTA2QzM0LjI0MTYgMy43NTU5N2UtMDYgMzIuODk3OSAxLjM0MzE1IDMyLjg5NzkgM0wzMi44OTc5IDM3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zOS4xMTY2IDJMMzkuMTE2NiAzOEMzOS4xMTY2IDM4LjU1MjMgMzkuNTY0NCAzOSA0MC4xMTY5IDM5TDc4LjgzMTkgMzlDNzkuMzg0NCAzOSA3OS44MzIzIDM4LjU1MjMgNzkuODMyMyAzOEw3OS44MzIzIDJDNzkuODMyMyAxLjQ0NzcyIDc5LjM4NDQgMSA3OC44MzE5IDFMNDAuMTE2OSAxQzM5LjU2NDQgMSAzOS4xMTY2IDEuNDQ3NzIgMzkuMTE2NiAyWk0zOC4xMTYyIDM4QzM4LjExNjIgMzkuMTA0NiAzOS4wMTIgNDAgNDAuMTE2OSA0MEw3OC44MzE5IDQwQzc5LjkzNjkgNDAgODAuODMyNiAzOS4xMDQ2IDgwLjgzMjYgMzhMODAuODMyNiAyQzgwLjgzMjYgMC44OTU0MzIgNzkuOTM2OSAzLjY2NzdlLTA3IDc4LjgzMTkgNC41Nzg2OWUtMDdMNDAuMTE2OSAzLjY0OTc1ZS0wNkMzOS4wMTIgMy43NDA4NWUtMDYgMzguMTE2MiAwLjg5NTQzNSAzOC4xMTYyIDJMMzguMTE2MiAzOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04My44NTggMTkuMTExMUM4NC44NDAyIDE5LjExMTEgODUuNjM2NCAxOS45MDcgODUuNjM2NCAyMC44ODg4Qzg1LjYzNjQgMjEuODcwNyA4NC44NDAyIDIyLjY2NjYgODMuODU4IDIyLjY2NjZDODIuODc1OCAyMi42NjY2IDgyLjA3OTYgMjEuODcwNyA4Mi4wNzk2IDIwLjg4ODhDODIuMDc5NiAxOS45MDcgODIuODc1OCAxOS4xMTExIDgzLjg1OCAxOS4xMTExWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04My42MzU3IDIwLjg4ODhDODMuNjM1NyAyMS4wMTE2IDgzLjczNTIgMjEuMTExMSA4My44NTggMjEuMTExMUM4My45ODA4IDIxLjExMTEgODQuMDgwMyAyMS4wMTE2IDg0LjA4MDMgMjAuODg4OEM4NC4wODAzIDIwLjc2NjEgODMuOTgwOCAyMC42NjY2IDgzLjg1OCAyMC42NjY2QzgzLjczNTIgMjAuNjY2NiA4My42MzU3IDIwLjc2NjEgODMuNjM1NyAyMC44ODg4Wk04NS42MzY0IDIwLjg4ODhDODUuNjM2NCAxOS45MDcgODQuODQwMiAxOS4xMTExIDgzLjg1OCAxOS4xMTExQzgyLjg3NTggMTkuMTExMSA4Mi4wNzk2IDE5LjkwNyA4Mi4wNzk2IDIwLjg4ODhDODIuMDc5NiAyMS44NzA3IDgyLjg3NTggMjIuNjY2NiA4My44NTggMjIuNjY2NkM4NC44NDAyIDIyLjY2NjYgODUuNjM2NCAyMS44NzA3IDg1LjYzNjQgMjAuODg4OFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=" alt=""><div class="_3rdrTcGtgqupo-5iTBHstN">DOWNLOAD OUR APP</div><div class="_3co-Yg3QLu2_Enef-_IGG3"><a href="https://itunes.apple.com/app/id1227792122" target="_blank" rel="nofollow noopener noreferrer"><span class="icon icon-apple"></span><span>iOS</span></a><!-- react-text: 5736 -->&nbsp;&nbsp;&nbsp;<!-- /react-text --><a href="https://play.google.com/store/apps/details?id=il.co.onmap.android" target="_blank" rel="nofollow noopener noreferrer"><span class="icon icon-android"></span><span>Android</span></a></div></div>
+            </div>
+
+        </div>
+        <!-- Cover -->
+
+    </section>
+
+    <div class="container py-5">
+        <p class="title_txt mb-4">Recent searches</p>
+        <a href="#" class="cate_link">Apartments and real estate for sale</a>
+        <a href="#" class="cate_link">Ramat gan, apartments and real estate for sale</a>
+        <a href="#" class="cate_link">Bnei brak, apartments and real estate for sale</a>
+    </div>
+
+    <!-- Slider Post's -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <p class="title_txt mb-4">Apartments for sale</p>
+        </div>
+
+        <div class="row slick_slider">
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container py-5">
+        <p class="title_txt mb-4">Properties for sale</p>
+        <a href="#" class="cate_link">Tel Aviv-Yafo</a>
+        <a href="#" class="cate_link">Netanya</a>
+        <a href="#" class="cate_link">Rishon LeTsiyon</a>
+        <a href="#" class="cate_link">Rehovot</a>
+        <a href="#" class="cate_link">Haifa</a>
+        <a href="#" class="cate_link">Ashdod</a>
+        <a href="#" class="cate_link">Holon</a>
+        <a href="#" class="cate_link">Bat Yam</a>
+        <a href="#" class="cate_link">Petah Tikva</a>
+        <!-- <a href="#" class="cate_link">General search</a> -->
+    </div>
+
+
+    <!-- Slider Post's -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <p class="title_txt mb-4">Apartments for sale</p>
+        </div>
+
+        <div class="row slick_slider">
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Properties -->
+        <div class="container py-5">
+            <p class="title_txt mb-4 fs-5">Properties for rent</p>
+            <a href="#" class="cate_link">Tel Aviv-Yafo</a>
+            <a href="#" class="cate_link">Netanya</a>
+            <a href="#" class="cate_link">Rishon LeTsiyon</a>
+            <a href="#" class="cate_link">Rehovot</a>
+            <a href="#" class="cate_link">Haifa</a>
+            <a href="#" class="cate_link">Ashdod</a>
+            <a href="#" class="cate_link">Holon</a>
+            <a href="#" class="cate_link">Bat Yam</a>
+            <a href="#" class="cate_link">Petah Tikva</a>
+            <!-- <a href="#" class="cate_link">General search</a> -->
+        </div>
+
+    </div>
+
+
+    <!-- Slider Post's -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <p class="title_txt mb-4">New homes</p>
+        </div>
+
+        <div class="row slick_slider">
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid p-5 bg-info">container</div>
+
+
+    <!-- Slider Post's -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <p class="title_txt mb-4">Properties Under ₪1,000,000</p>
+        </div>
+
+        <div class="row slick_slider">
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Slider Post's -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <p class="title_txt mb-4">Apartment <a href="#" class="title_txt_link">Cottage/house</a> <a href="#" class="title_txt_link">Penthouse</a><a href="#" class="title_txt_link">Garden apt.</a></p>
+        </div>
+
+        <div class="row slick_slider">
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="post_wrap">
+                    <div class="PW_top">
+                        <img src="assets/media/cover.jpg" alt="image">
+                        <div class="post_overlay">
+                            <span class="post_fav_btn"><i class="fa fa-heart"></i></span>
+                            <span class="post_price">₪ &nbsp;1,590,000</span>
+                        </div>
+                    </div>
+                    <div class="PW_bottom">
+                        <small class="d-block"><strong>Apartment</strong></small>
+                        <small>Arye Kremer St.6, Ramla</small>
+                        <small class="PWB_info">
+                            <span><i class="fa-solid fa-door-open"></i>&nbsp;3</span>
+                            <span><i class="fa-solid fa-stairs"></i>&nbsp;2</span>
+                            <span><i class="fa-solid fa-ruler-horizontal"></i>&nbsp;304</span>
+                            <span><i class="fa-solid fa-car-rear"></i>&nbsp;1</span>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Slider Post's -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <p class="title_txt mb-4">Popular Professionals</p>
+        </div>
+
+        <div class="row slick_slider">
+            <div class="col-md-12">
+                
+                fsadjflkasd
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container py-5 border-top">
+        <p class="title_txt mb-4">Apartments for sale under</p>
+        <a href="#" class="cate_link">₪850,000</a>
+        <a href="#" class="cate_link">₪950,000</a>
+        <a href="#" class="cate_link">₪1,050,000</a>
+        <a href="#" class="cate_link">₪1,250,000</a>
+        <a href="#" class="cate_link">₪1,450,000</a>
+    </div>
+
+    <div class="container py-5">
+        <p class="title_txt mb-4">Apartments for sale by rooms</p>
+        <a href="#" class="cate_link">1 Room</a>
+        <a href="#" class="cate_link">2 Rooms</a>
+        <a href="#" class="cate_link">3 Rooms</a>
+        <a href="#" class="cate_link">4 Rooms</a>
+        <a href="#" class="cate_link">5 Rooms</a>
+        <a href="#" class="cate_link">6 +</a>
+    </div>
+
+
+
+    <!-- Bootstrap JS File Link -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Font JS File Link -->
+    <script src="assets/js/all.min.js"></script>
+    <!-- Filter JS File Link -->
+    <script src="assets/js/virtual-select.min.js"></script>
+    <!-- JQuery CDN Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- slick Slider Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        function flagDropdown() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+
+        // Filter
+        function ShowFilter() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("filter_Btn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Additional options &blacktriangledown;"; 
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Less options &blacktriangle;"; 
+                moreText.style.display = "inline";
+            }
+        }
+
+        // Filter
+        VirtualSelect.init({ 
+            ele: '#multi_option' 
+        });
+
+
+        // Slick Slider
+        $('.slick_slider').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+                },
+                {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+    </script>
+
+</body>
+</html>

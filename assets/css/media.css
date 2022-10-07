@@ -1,0 +1,32 @@
+@media (max-width:1030px) 
+{
+    
+}
+
+@media (max-width:991px) 
+{
+    .publish_btn {
+        font-size: 12px !important;
+        padding: 1px 4px;
+    }
+
+    .header-bottom {
+        padding: 0px;
+    }
+}
+
+@media (max-width:767px) 
+{
+    .publish_btn {
+        font-size: 7px !important;
+        padding: 1px 4px;
+    }
+}
+
+@media (max-width:330px) 
+{
+    .publish_btn {
+        font-size: 9px !important;
+        padding: 1px 4px;
+    }
+}
